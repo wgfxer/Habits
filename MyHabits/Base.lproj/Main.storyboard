@@ -1,24 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K56-JX-jcQ">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Список привычек-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HabitsListViewController" customModule="MyHabits" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Список привычек" id="Xmj-Wa-awC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="fSk-AM-mKF">
+                            <connections>
+                                <action selector="onAddHabitClick:" destination="BYZ-38-t0r" id="IaQ-Xl-k3p"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="UDA-uh-Keq" kind="presentation" identifier="goToAddHabit" id="KO9-Xt-iFo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-16.030534351145036" y="3.5211267605633805"/>
+        </scene>
+        <!--Детали привычек-->
+        <scene sceneID="zgf-c6-kti">
+            <objects>
+                <viewController storyboardIdentifier="habitDetails" id="GMH-8R-8rC" customClass="ViewController" customModule="MyHabits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yuP-YW-2vp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wcd-Ua-J0U">
+                                <rect key="frame" x="136" y="409" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="method:" destination="GMH-8R-8rC" eventType="touchUpInside" id="0rm-z3-QX7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NLa-Kh-OxA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Детали привычек" id="JmR-Hh-I5j"/>
+                    <connections>
+                        <segue destination="IVN-lK-swF" kind="show" identifier="goToScreen3" id="PUi-7W-Law"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ANc-RA-wKI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1352" y="627"/>
+        </scene>
+        <!--Screen 3-->
+        <scene sceneID="YK7-5c-xQA">
+            <objects>
+                <viewController id="IVN-lK-swF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4K8-37-XrU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="odQ-24-Gu3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Screen 3" id="G7Q-cv-1k4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HYG-IL-cTT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2211" y="18"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Cgs-By-ALf">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="K56-JX-jcQ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="06m-I6-aaV">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="lightTextColor"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="74B-S8-GN7">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5ax-Wp-pyf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IcD-ga-oh5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1053" y="4"/>
+        </scene>
+        <!--Новая привычка-->
+        <scene sceneID="0j0-be-SLz">
+            <objects>
+                <viewController storyboardIdentifier="createHabit" id="UDA-uh-Keq" customClass="CreateHabitViewController" customModule="MyHabits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jlb-l4-FGS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PhD-9L-ho7">
+                                <rect key="frame" x="10" y="10" width="373" height="68.333333333333329"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qMr-nC-Hpz">
+                                        <rect key="frame" x="0.0" y="0.0" width="373" height="34"/>
+                                        <accessibility key="accessibilityConfiguration" hint="привычка hint" label="Привычка label"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NnI-Ci-df5">
+                                        <rect key="frame" x="0.0" y="34" width="373" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Сохранить"/>
+                                        <connections>
+                                            <action selector="onClick:" destination="UDA-uh-Keq" eventType="touchUpInside" id="f1B-Ws-GjL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3ec-MU-pVB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3ec-MU-pVB" firstAttribute="trailing" secondItem="PhD-9L-ho7" secondAttribute="trailing" constant="10" id="Wxz-AX-LSy"/>
+                            <constraint firstItem="PhD-9L-ho7" firstAttribute="leading" secondItem="3ec-MU-pVB" secondAttribute="leading" constant="10" id="sgC-vV-b2y"/>
+                            <constraint firstItem="PhD-9L-ho7" firstAttribute="top" secondItem="3ec-MU-pVB" secondAttribute="top" constant="10" id="yuf-Wv-st1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Новая привычка" id="xwf-ew-oxR">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="mUt-vy-8Md">
+                            <connections>
+                                <action selector="onDoneClick:" destination="UDA-uh-Keq" id="CuN-iE-FPA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="habitTitleField" destination="qMr-nC-Hpz" id="1Vm-iv-iwO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ep-PQ-Trn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1217.5572519083969" y="-241.5492957746479"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="lightTextColor">
+            <color white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
