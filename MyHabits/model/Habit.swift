@@ -7,6 +7,9 @@
 
 import Foundation
 
+/**
+ * Модель для привычки. 
+ */
 class Habit: Codable {
     let title: String
     var doneDays: Set<Date> = Set()
